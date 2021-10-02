@@ -1,0 +1,52 @@
+#include<stdio.h>
+#define max 50
+struct customer
+{
+	char name[20];
+	int age;
+	int p_number;
+	int a_number;
+	int a_balance;
+};
+struct customer c[max];
+int main()
+{
+	int opt,n,id,pass,i;
+	char ch;
+	printf("-----WELCOME TO MY CAPTAIN BANK OF INDIA-----\n");
+		printf("Enter the number of customers\n");
+		scanf("%d",&n);
+		 for(i=0;i<n;i++)
+		{
+			printf("Enter the name of the customer\n");
+			scanf("%s",&c[i].name);
+			printf("Enter age of the customer\n");
+			scanf("%d",&c[i].age);
+			printf("Enter phone number of the customer\n");
+			scanf("%d",&c[i].p_number);
+			printf("Enter account nuumber of the customer\n");
+			scanf("%d",&c[i].a_number);
+			printf("Enter account balance\n");
+			scanf("%d",&c[i].a_balance);
+		}
+		printf("Thank you for entering the details\n");
+		printf("Are you a bank employee or not (y/n)\n");
+		fflush(stdin);
+		scanf("%c",&ch);
+		if(ch=='y'||ch=='Y')
+		{
+		printf("Enter login id which is given to you\n");
+		scanf("%d",&id);
+		printf("Enter the secret password to get access to the customer details\n");
+		scanf("%d",&pass);   //password will be 12345
+		if(pass==12345)
+		{
+			printf("The customer details are:\n");
+			printf("----------------------------------------------------------------\n");
+			printf("NAME		AGE			PHONE_NUMBER		ACCOUNT_NUMBER		ACCOUNT_BALANCE\n");
+			for(i=0;i<n;i++)
+			printf("%s		%d			%d			%d			%d\n",c[i].name,c[i].age,c[i].p_number,c[i].a_number,c[i].a_balance);
+		}
+	    }
+	return 0;
+}
